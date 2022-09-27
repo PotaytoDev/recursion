@@ -14,4 +14,13 @@ def fibs(number)
   end
 end
 
+# Now write another method #fibs_rec which solves the same problem recursively.
+
+def fibs_rec(number, fibonacci_array = [0, 1])
+  fibs_rec(number - 1, fibonacci_array) if number > 3
+
+  fibonacci_array << fibonacci_array[number - 3] + fibonacci_array[number - 2]
+end
+
 p fibs(8)
+p fibs_rec(8)
